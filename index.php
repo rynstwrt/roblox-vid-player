@@ -37,11 +37,12 @@
 				}
 
 				file_put_contents("video.mp4", fopen($video, 'r'));
-				/*
+				
 				$cmd = sprintf('ffmpeg -i video.mp4 -vf scale=%dx%d,fps=%d', $width, $height, $fps);
 				$cmdfull = $cmd." %d.png";
 				exec($cmdfull);
-
+				/*
+				
 				$images = glob("[0-9]*.png");
 				natsort($images);
 				foreach ($images as $image) {
