@@ -37,7 +37,20 @@
 				}
 
 				file_put_contents("video.mp4", fopen($video, 'r'));
-				echo("YEEEET")
+				$cmd = sprintf('ffmpeg -i video.mp4 -vf scale=%dx%d,fps=%d', $width, $height, $fps);
+				$cmdfull = $cmd." %d.png";
+				exec($cmdfull);
+
+				$images = glob("[0-9]*.png");
+				natsort($images);
+				foreach ($images as $image) {
+					$colarray = getRGB($image);
+					foreach ($colarray as $col) {
+						$val = $col."<br>";
+						echo $val;
+					}
+					echo "<br><br>";
+				}
 				deleteLocalFiles();
 
 			} else {
