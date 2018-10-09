@@ -41,7 +41,7 @@
 				$cmd = sprintf('ffmpeg -i video.mp4 -vf scale=%dx%d,fps=%d', $width, $height, $fps);
 				$cmdfull = $cmd." %d.png";
 				exec($cmdfull);
-				/*
+				
 				
 				$images = glob("[0-9]*.png");
 				natsort($images);
@@ -52,7 +52,7 @@
 						echo $val;
 					}
 					echo "<br><br>";
-				}*/
+				}
 				deleteLocalFiles();
 
 			} else {
