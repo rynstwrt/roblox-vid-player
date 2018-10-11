@@ -45,10 +45,8 @@
 				echo $cmdfull;
 				exec($cmdfull . ' 2>&1', $out);
 				var_dump($out);
-				exec("ls", $out);
-				var_dump($out);
 			
-				$images = glob("[0-9]*.png");
+				$images = glob(getcwd() . "/[0-9]*.png");
 				natsort($images);
 				foreach ($images as $image) {
 					$colarray = getRGB($image);
