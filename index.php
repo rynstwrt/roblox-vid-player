@@ -36,8 +36,8 @@
 					return $colorvals;
 				}
 				
-				$file = getcwd() . "\\video.mp4";
-				$outputfiles = getcwd() . "\%d.png";
+				$file = getcwd() . "/video.mp4";
+				$outputfiles = getcwd() . "/%d.png";
 				file_put_contents($file, fopen($video, 'r'));
 				
 				$cmd = sprintf("ffmpeg -i " . $file . " -vf scale=%dx%d,fps=%d", $width, $height, $fps);
