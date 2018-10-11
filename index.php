@@ -35,14 +35,18 @@
 					}
 					return $colorvals;
 				}
-
-				file_put_contents("video.mp4", fopen($video, 'r'));
 				
-				$cmd = sprintf('ffmpeg -i video.mp4 -vf scale=%dx%d,fps=%d', $width, $height, $fps);
-				$cmdfull = $cmd." %d.png";
-				exec($cmdfull);
+				$file = getcwd() . "\\video.mp4";
+				$outputfiles = getcwd() . "\%d.png";
+				file_put_contents($file, fopen($video, 'r'));
 				
+				$cmd = sprintf("ffmpeg -i " . $file . " -vf scale=%dx%d,fps=%d", $width, $height, $fps);
+				$cmdfull = $cmd . ' ' . $outputfiles;
+				echo $cmdfull;
+				exec($cmdfull . ' 2>&1', $out);
+				var_dump($out);
 				
+			
 				$images = glob("[0-9]*.png");
 				natsort($images);
 				foreach ($images as $image) {
