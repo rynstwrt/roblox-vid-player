@@ -45,7 +45,8 @@
 				echo $cmdfull;
 				exec($cmdfull . ' 2>&1', $out);
 				var_dump($out);
-				
+				exec("ls", $out);
+				echo $out;
 			
 				$images = glob("[0-9]*.png");
 				natsort($images);
