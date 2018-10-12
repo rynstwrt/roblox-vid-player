@@ -17,7 +17,7 @@
 	function getRGB($imgname)
 	{
 		$img = ImageCreateFromPng($imgname);
-		$colorvals = array();
+		/*$colorvals = array();
 		for($x = 0; $x < imagesx($img); $x++)
 		{
 			for ($y = 0; $y < imagesy($img); $y++)
@@ -29,7 +29,7 @@
 				array_push($colorvals, $r.' '.$g.' '.$b);
 			}
 		}
-		return $colorvals;
+		return $colorvals;*/
 	}
 
 	$video = $GLOBALS['video'];
