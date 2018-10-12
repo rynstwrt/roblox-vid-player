@@ -60,8 +60,8 @@
 			foreach ($images as $image)
 			{
 				echo "iteration";
-				$image = preg_match("/\d+.png/", $image);
-				$colarray = getRGB($image);
+				preg_match('/\d+\.png/', $image, $newimage);
+				$colarray = getRGB($newimage);
 				/*foreach ($colarray as $col)
 				{
 					$val = $col."<br>";
