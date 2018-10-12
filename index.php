@@ -47,9 +47,9 @@
 				
 			
 				$images = glob(getcwd() . "/[0-9]*.png");
-				var_dump($images);
 				natsort($images);
 				foreach ($images as $image) {
+					echo "yeet";
 					$colarray = getRGB($image);
 					foreach ($colarray as $col) {
 						$val = $col."<br>";
