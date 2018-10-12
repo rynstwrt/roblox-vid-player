@@ -20,7 +20,9 @@
 
 		if ($video) {
 			if (strpos($video, ".mp4") !== false or strpos($video, ".webm") !== false or strpos($video, ".ogv") !== false or strpos($video, ".gif") !== false or strpos($video, ".flv") !== false) {
+				
 				deleteLocalFiles();
+
 				function getRGB($imgname) {
 					$img = ImageCreateFromPng($imgname);
 					$colorvals = array();
@@ -50,7 +52,7 @@
 				natsort($images);
 				echo count($images);
 				foreach ($images as $image) {
-					echo "yeet";
+					echo $image;
 					$colarray = getRGB($image);
 					foreach ($colarray as $col) {
 						$val = $col."<br>";
