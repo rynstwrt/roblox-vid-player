@@ -48,6 +48,7 @@
 			
 				$images = glob(getcwd() . "/[0-9]*.png");
 				natsort($images);
+				echo count($images);
 				foreach ($images as $image) {
 					echo "yeet";
 					$colarray = getRGB($image);
