@@ -54,7 +54,7 @@
 			echo $cmdfull;
 			exec($cmdfull . ' 2>&1', $out);
 		
-			$images = glob(getcwd() . "/[0-9]*.png");
+			$images = glob("/[0-9]*.png");
 			natsort($images);
 
 			foreach ($images as $image)
