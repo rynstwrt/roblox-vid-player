@@ -61,7 +61,9 @@
 			{
 				echo "iteration";
 				preg_match('/\d+\.png/', $image, $newimage);
-				$colarray = getRGB($newimage[0]);
+				echo file_exists($image);
+				echo file_exists($newimage);
+				//$colarray = getRGB($newimage[0]);
 				/*foreach ($colarray as $col)
 				{
 					$val = $col."<br>";
