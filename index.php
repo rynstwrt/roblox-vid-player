@@ -54,12 +54,13 @@
 			echo $cmdfull;
 			exec($cmdfull . ' 2>&1', $out);
 		
-			$images = glob("/[0-9]*.png");
+			$images = glob(getcwd() . "/[0-9]*.png");
 			natsort($images);
 
 			foreach ($images as $image)
 			{
 				echo "iteration";
+				$image = preg_match("/\d+.png/", $image);
 				$colarray = getRGB($image);
 				/*foreach ($colarray as $col)
 				{
