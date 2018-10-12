@@ -16,7 +16,8 @@
 
 	function getRGB($imgname)
 	{
-		$img = ImageCreateFromPng("app/" . $imgname);
+		echo $imgname;
+		$img = ImageCreateFromPng($imgname);
 		/*$colorvals = array();
 		for($x = 0; $x < imagesx($img); $x++)
 		{
