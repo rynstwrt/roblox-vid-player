@@ -52,12 +52,12 @@
 				natsort($images);
 				echo count($images);
 				foreach ($images as $image) {
-					echo $image;
-					$colarray = getRGB($image);
+					echo "yeet";
+					/*$colarray = getRGB($image);
 					foreach ($colarray as $col) {
 						$val = $col."<br>";
 						echo $val;
-					}
+					}*/
 					echo "<br><br>";
 				}
 				deleteLocalFiles();
