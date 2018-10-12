@@ -44,8 +44,6 @@
 			
 			deleteLocalFiles();
 
-			
-			
 			$file = getcwd() . "/video.mp4";
 			$outputfiles = getcwd() . "/%d.png";
 			file_put_contents($file, fopen($video, 'r'));
@@ -54,21 +52,19 @@
 			$cmdfull = $cmd . ' ' . $outputfiles;
 			echo $cmdfull;
 			exec($cmdfull . ' 2>&1', $out);
-			
 		
 			$images = glob(getcwd() . "/[0-9]*.png");
 			natsort($images);
-			echo count($images);
+
 			foreach ($images as $image)
 			{
-				echo "yeet";
 				$colarray = getRGB($image);
-				foreach ($colarray as $col)
+				/*foreach ($colarray as $col)
 				{
 					$val = $col."<br>";
 					echo $val;
 				}
-				echo "<br><br>";
+				echo "<br><br>";*/
 			}
 			deleteLocalFiles();
 
