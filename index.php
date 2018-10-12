@@ -58,6 +58,7 @@
 
 			foreach ($images as $image)
 			{
+				echo "iteration";
 				$colarray = getRGB($image);
 				/*foreach ($colarray as $col)
 				{
