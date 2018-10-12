@@ -44,7 +44,7 @@
 				$cmdfull = $cmd . ' ' . $outputfiles;
 				echo $cmdfull;
 				exec($cmdfull . ' 2>&1', $out);
-				var_dump($out);
+				
 			
 				$images = glob(getcwd() . "/[0-9]*.png");
 				var_dump($images);
