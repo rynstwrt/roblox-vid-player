@@ -1,0 +1,6 @@
+{
+	"name": "roblox-vid-player",
+    "require": {
+        "ext-gd": "*"
+    }
+}
