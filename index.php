@@ -60,16 +60,7 @@
 			foreach ($images as $image)
 			{
 				echo "iteration";
-				preg_match('/\d+\.png/', $image, $newimage);
-				if (file_exists($image))
-				{
-					echo "omfg1";
-				}
-				if (file_exists($newimage))
-				{
-					echo "omfg2";
-				}
-				//$colarray = getRGB($newimage[0]);
+				$colarray = getRGB($image);
 				/*foreach ($colarray as $col)
 				{
 					$val = $col."<br>";
