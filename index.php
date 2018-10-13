@@ -21,7 +21,7 @@
 	function getRGB($imgname)
 	{
 		echo $imgname;
-		$img = ImageCreateFromPng($imgname);
+		$img = imagecreatefrompng($imgname);
 		/*$colorvals = array();
 		for($x = 0; $x < imagesx($img); $x++)
 		{
