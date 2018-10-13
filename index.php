@@ -1,5 +1,9 @@
 <?php
 
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
 	$video = $_GET['video'];
 	$fps = $_GET['fps'];
 	$width = $_GET['width'];
@@ -14,33 +18,10 @@
 		}
 	}
 
-	function LoadPNG($imgname)
-	{
-	    /* Attempt to open */
-	    $im = @imagecreatefrompng($imgname);
-
-	    /* See if it failed */
-	    if(!$im)
-	    {
-	        /* Create a blank image */
-	        $im  = imagecreatetruecolor(150, 30);
-	        $bgc = imagecolorallocate($im, 255, 255, 255);
-	        $tc  = imagecolorallocate($im, 0, 0, 0);
-
-	        imagefilledrectangle($im, 0, 0, 150, 30, $bgc);
-
-	        /* Output an error message */
-	        imagestring($im, 1, 5, 5, 'Error loading ' . $imgname, $tc);
-	    }
-
-	    return $im;
-	}
-
 	function getRGB($imgname)
 	{
 		echo $imgname;
-		$img = LoadPNG($imgname);
-		echo "we good";
+		$img = ImageCreateFromPng($imgname);
 		/*$colorvals = array();
 		for($x = 0; $x < imagesx($img); $x++)
 		{
