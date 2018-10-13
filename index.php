@@ -20,9 +20,8 @@
 
 	function getRGB($imgname)
 	{
-		echo $imgname;
 		$img = imagecreatefrompng($imgname);
-		/*$colorvals = array();
+		$colorvals = array();
 		for($x = 0; $x < imagesx($img); $x++)
 		{
 			for ($y = 0; $y < imagesy($img); $y++)
@@ -34,7 +33,7 @@
 				array_push($colorvals, $r.' '.$g.' '.$b);
 			}
 		}
-		return $colorvals;*/
+		return $colorvals;
 	}
 
 	$video = $GLOBALS['video'];
@@ -55,22 +54,20 @@
 			
 			$cmd = sprintf("ffmpeg -i " . $file . " -vf scale=%dx%d,fps=%d", $width, $height, $fps);
 			$cmdfull = $cmd . ' ' . $outputfiles;
-			echo $cmdfull;
-			exec($cmdfull . ' 2>&1', $out);
+			exec($cmdfull);
 		
 			$images = glob(getcwd() . "/[0-9]*.png");
 			natsort($images);
 
 			foreach ($images as $image)
 			{
-				echo "iteration";
 				$colarray = getRGB($image);
-				/*foreach ($colarray as $col)
+				foreach ($colarray as $col)
 				{
 					$val = $col."<br>";
 					echo $val;
 				}
-				echo "<br><br>";*/
+				echo "<br><br>";
 			}
 			deleteLocalFiles();
 
