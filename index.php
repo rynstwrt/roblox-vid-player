@@ -62,7 +62,7 @@
 		$colarray = getRGB($image);
 		array_push($frames, $colarray);
 	}
-	echo $frames;
+	echo json_encode($frames);
 
 	deleteLocalFiles();
 
