@@ -59,10 +59,11 @@
 	$frames = array();
 	foreach ($images as $image)
 	{
+		echo '<img src="' + $image + '" alt="icon" />';
 		$colarray = getRGB($image);
 		array_push($frames, $colarray);
 	}
-	echo json_encode($frames);
+	//echo json_encode($frames);
 
 	deleteLocalFiles();
 
