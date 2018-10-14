@@ -59,7 +59,7 @@
 	$frames = array();
 	foreach ($images as $image)
 	{
-		echo '<img src="' . $image . '" alt="icon" />';
+		echo '<img src="' . getcwd() . '/' . $image . '" alt="icon" />';
 		$colarray = getRGB($image);
 		array_push($frames, $colarray);
 	}
