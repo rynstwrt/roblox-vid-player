@@ -55,12 +55,14 @@
 
 	$images = glob(getcwd() . "/[0-9]*.png");
 	natsort($images);
-
+	
+	$frames = array();
 	foreach ($images as $image)
 	{
 		$colarray = getRGB($image);
-		echo json_encode($colarray);
+		array_push($frames, $colarray);
 	}
+	echo $frames;
 
 	deleteLocalFiles();
 
