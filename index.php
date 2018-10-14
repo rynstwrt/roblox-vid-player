@@ -59,9 +59,11 @@
 	$frames = array();
 	foreach ($images as $image)
 	{
-		echo '<img src="' . getcwd() . '/' . $image . '" alt="icon" />';
-		$colarray = getRGB($image);
-		array_push($frames, $colarray);
+		$link = $image;
+		echo $link;
+		echo '<img src="' . $link . '" alt="icon" />';
+		/*$colarray = getRGB($image);
+		array_push($frames, $colarray);*/
 	}
 	//echo json_encode($frames);
 
